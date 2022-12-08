@@ -1,0 +1,20 @@
+{
+  "languageserver": {
+    "terraform": {
+      "command": "~/apps/terraform-ls/terraform-ls",
+      "args": ["serve"],
+      "filetypes": [
+        "terraform",
+        "tf"
+      ],
+      "initializationOptions": {},
+      "settings": {}
+    }
+  },
+
+  "pyright.enable": true,
+  "python.formatting.provider": "black",
+  "python.linting.mypy.Enabled": true,
+  "python.linting.pylint.Enabled": true,
+}
+

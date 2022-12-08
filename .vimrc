@@ -938,6 +938,9 @@ aug END
 
 aug AutoFormatPythonfiles
     au!
+    au BufWrite *.py call CocAction('format')
+    au BufWrite *.py CocCommand('python.runLinting')
+    au BufWrite *.py CocCommand('python.organizeimports')
     "au BufWritePost *.py !isort %
     "au BufWritePost *.py !black %
     "au BufWritePost *.py !mypy %
