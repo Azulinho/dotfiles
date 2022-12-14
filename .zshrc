@@ -20,11 +20,11 @@ bindkey -e
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/azul/.zshrc'
 
-autoload -Uz compinit
-compinit
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
 # End of lines added by compinstall
 #
-export PATH=~/bin:/run/wrappers/bin:$PATH
+export PATH=~/bin:/run/wrappers/bin:~/.nodenv/bin:$PATH
 eval "$(direnv hook zsh)"
 export PATH="$HOME/.tfenv/bin:$PATH"
 
@@ -55,7 +55,7 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 export BW_SESSION=`cat ~/.secrets/bw.session`
 export GOPATH=~/go
 export PATH=$GOPATH/bin:$PATH
-source /usr/share/nvm/init-nvm.sh
+#source /usr/share/nvm/init-nvm.sh
 
 export PATH="${PATH}:${HOME}/.krew/bin"
 
@@ -187,3 +187,11 @@ export PATH=/home/azul/.local/bin:$PATH
 
  eval "$(nodenv init -)"
 
+ source /usr/local/share/chruby/chruby.sh
+ source /usr/local/share/chruby/auto.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export EDITOR=vim
